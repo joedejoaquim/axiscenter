@@ -33,6 +33,7 @@ export default function EditarAulaPage() {
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!aula) return
     setSaving(true)
     const { error: err } = await supabase.from('aulas').update({
       titulo: aula.titulo,

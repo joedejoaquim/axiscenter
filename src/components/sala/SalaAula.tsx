@@ -2,17 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react'
 
+import type { DailyCall, DailyEvent } from '@daily-co/daily-js'
+
 interface SalaAulaProps {
   salaId: string
   userId: string  // reserved for future use
   userName: string
   isOwner: boolean
-}
-
-interface DailyCall {
-  on: (event: string, cb: () => void) => DailyCall
-  join: (opts: { url: string; token: string; userName: string }) => Promise<void>
-  destroy: () => void
 }
 
 export function SalaAula({ salaId, userName, isOwner }: SalaAulaProps) {
@@ -43,8 +39,8 @@ export function SalaAula({ salaId, userName, isOwner }: SalaAulaProps) {
 
         callRef.current = call
 
-        call.on('joined-meeting', () => setStatus('joined'))
-        call.on('error', () => setStatus('error'))
+        call.on('joined-meeting' as DailyEvent, () => setStatus('joined'))
+        call.on('error' as DailyEvent, () => setStatus('error'))
 
         await call.join({
           url: `${process.env.NEXT_PUBLIC_DAILY_URL}/${salaId}`,

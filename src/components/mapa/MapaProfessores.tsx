@@ -13,10 +13,10 @@ interface MapaProfessoresProps {
 
 export function MapaProfessores({ raioKm = 20 }: MapaProfessoresProps) {
   const [MapComponents, setMapComponents] = useState<{
-    MapContainer: React.ComponentType<unknown>
-    TileLayer: React.ComponentType<unknown>
-    Marker: React.ComponentType<unknown>
-    Popup: React.ComponentType<unknown>
+    MapContainer: React.ElementType
+    TileLayer: React.ElementType
+    Marker: React.ElementType
+    Popup: React.ElementType
     useMap: unknown
   } | null>(null)
   const [professores, setProfessores] = useState<ProfPin[]>([])
