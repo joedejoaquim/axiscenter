@@ -77,7 +77,7 @@ export default async function AlunoDashboard() {
           <Link href="/aluno/cursos" className="text-sm font-medium text-[#F97316] hover:underline">Ver todas →</Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {(aulasRecentes ?? []).map((aula: any) => (
+          {(aulasRecentes ?? []).map((aula: { id: string; plano: string; titulo: string; profiles?: { name: string } }) => (
             <Card key={aula.id} padding="sm" className="hover:shadow-md transition-shadow">
               <div className="h-32 rounded-2xl bg-gradient-to-br from-[#0D2B5E] to-[#122859] mb-4" />
               <Badge variant={aula.plano === 'pro' ? 'accent' : 'neutral'} className="mb-2">

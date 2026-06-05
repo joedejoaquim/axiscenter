@@ -4,15 +4,21 @@ import { useEffect, useRef, useState } from 'react'
 
 interface SalaAulaProps {
   salaId: string
-  userId: string
+  userId: string  // reserved for future use
   userName: string
   isOwner: boolean
 }
 
-export function SalaAula({ salaId, userId, userName, isOwner }: SalaAulaProps) {
+interface DailyCall {
+  on: (event: string, cb: () => void) => DailyCall
+  join: (opts: { url: string; token: string; userName: string }) => Promise<void>
+  destroy: () => void
+}
+
+export function SalaAula({ salaId, userName, isOwner }: SalaAulaProps) {
   const frameRef = useRef<HTMLDivElement>(null)
   const [status, setStatus] = useState<'loading' | 'joined' | 'error'>('loading')
-  const callRef = useRef<any>(null)
+  const callRef = useRef<DailyCall | null>(null)
 
   useEffect(() => {
     let destroyed = false

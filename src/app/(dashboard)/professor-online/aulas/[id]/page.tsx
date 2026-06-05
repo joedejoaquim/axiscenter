@@ -8,24 +8,28 @@ import { Button } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { Trash2 } from 'lucide-react'
 
+type AulaForm = { titulo: string; descricao: string; materia: string; tipo: string; plano: string; duracao_min: number; status: string; [key: string]: string | number }
+
 export default function EditarAulaPage() {
   const { id } = useParams<{ id: string }>()
   const router = useRouter()
   const supabase = createClient()
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
-  const [aula, setAula] = useState<any>(null)
+  const [aula, setAula] = useState<AulaForm | null>(null)
 
   useEffect(() => {
-    supabase.from('aulas').select('*').eq('id', id).single().then(({ data }) => {
-      if (data) setAula(data)
+    const load = async () => {
+      setLoading(true)
+      const { data } = await supabase.from('aulas').select('*').eq('id', id).single()
+      if (data) setAula(data as AulaForm)
       setLoading(false)
-    })
-    setLoading(true)
-  }, [id])
+    }
+    load()
+  }, [id, supabase])
 
-  const set = (k: string, v: any) => setAula((a: any) => ({ ...a, [k]: v }))
+  const set = (k: string, v: string | number) => setAula((a: AulaForm | null) => a ? ({ ...a, [k]: v }) : a)
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault()

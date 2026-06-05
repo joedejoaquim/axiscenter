@@ -4,9 +4,11 @@ import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Calendar } from 'lucide-react'
 
-const STATUS_COLOR: Record<string, any> = {
+const STATUS_COLOR: Record<string, 'success' | 'warning' | 'danger' | 'neutral'> = {
   confirmado: 'success', pendente: 'warning', recusado: 'danger', concluido: 'neutral', cancelado: 'danger',
 }
+
+type Agendamento = { id: string; status: string; data_hora: string; formato: string; duracao_min: number; profiles?: { name: string; avatar_url?: string } }
 
 export default async function AgendaProfessorOnlinePage() {
   const supabase = await createClient()
@@ -19,10 +21,10 @@ export default async function AgendaProfessorOnlinePage() {
     .eq('professor_id', user.id)
     .order('data_hora', { ascending: true })
 
-  const proximos = (agendamentos ?? []).filter((a: any) =>
+  const proximos = (agendamentos ?? []).filter((a: Agendamento) =>
     ['pendente', 'confirmado'].includes(a.status) && new Date(a.data_hora) >= new Date()
   )
-  const historico = (agendamentos ?? []).filter((a: any) =>
+  const historico = (agendamentos ?? []).filter((a: Agendamento) =>
     !['pendente', 'confirmado'].includes(a.status) || new Date(a.data_hora) < new Date()
   )
 
@@ -34,7 +36,7 @@ export default async function AgendaProfessorOnlinePage() {
         <div>
           <h2 className="text-base font-semibold text-slate-700 mb-3">Próximas aulas</h2>
           <div className="space-y-3">
-            {(proximos as any[]).map(ag => (
+            {(proximos as Agendamento[]).map(ag => (
               <Card key={ag.id} className="flex items-center gap-4">
                 <div className="rounded-2xl bg-[#F97316]/10 p-3 shrink-0">
                   <Calendar size={20} className="text-[#F97316]" />
@@ -59,7 +61,7 @@ export default async function AgendaProfessorOnlinePage() {
         <div>
           <h2 className="text-base font-semibold text-slate-700 mb-3">Histórico</h2>
           <div className="space-y-3">
-            {(historico as any[]).map(ag => (
+            {(historico as Agendamento[]).map(ag => (
               <Card key={ag.id} className="flex items-center gap-4 opacity-70">
                 <div className="rounded-2xl bg-slate-100 p-3 shrink-0">
                   <Calendar size={20} className="text-slate-400" />

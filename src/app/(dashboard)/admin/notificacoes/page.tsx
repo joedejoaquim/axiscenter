@@ -30,7 +30,7 @@ export default function NotificacoesAdminPage() {
       return
     }
 
-    const inserts = users.map((u: any) => ({
+    const inserts = users.map((u: { id: string }) => ({
       user_id: u.id, titulo, mensagem, tipo,
     }))
 
@@ -87,7 +87,7 @@ export default function NotificacoesAdminPage() {
           <div>
             <label className="block text-sm font-medium mb-1.5">Tipo</label>
             <select
-              value={tipo} onChange={e => setTipo(e.target.value as any)}
+              value={tipo} onChange={e => setTipo(e.target.value as 'info' | 'alerta' | 'sucesso' | 'promocao')}
               className="w-full rounded-3xl border border-slate-200 px-4 py-3 focus:border-[#F97316] focus:outline-none focus:ring-1 focus:ring-[#F97316] transition-colors"
             >
               <option value="info">ℹ️ Info</option>

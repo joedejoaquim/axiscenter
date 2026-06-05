@@ -12,7 +12,13 @@ interface MapaProfessoresProps {
 }
 
 export function MapaProfessores({ raioKm = 20 }: MapaProfessoresProps) {
-  const [MapComponents, setMapComponents] = useState<any>(null)
+  const [MapComponents, setMapComponents] = useState<{
+    MapContainer: React.ComponentType<unknown>
+    TileLayer: React.ComponentType<unknown>
+    Marker: React.ComponentType<unknown>
+    Popup: React.ComponentType<unknown>
+    useMap: unknown
+  } | null>(null)
   const [professores, setProfessores] = useState<ProfPin[]>([])
   const [userPos, setUserPos] = useState<[number, number] | null>(null)
   const supabase = createClient()
@@ -22,10 +28,10 @@ export function MapaProfessores({ raioKm = 20 }: MapaProfessoresProps) {
     Promise.all([
       import('react-leaflet'),
       import('leaflet'),
-      import('leaflet/dist/leaflet.css' as any),
+      import('leaflet/dist/leaflet.css'),
     ]).then(([rl, L]) => {
       // Fix ícones Leaflet
-      delete (L.default.Icon.Default.prototype as any)._getIconUrl
+      delete (L.default.Icon.Default.prototype as unknown as Record<string, unknown>)._getIconUrl
       L.default.Icon.Default.mergeOptions({
         iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
         iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
@@ -46,7 +52,7 @@ export function MapaProfessores({ raioKm = 20 }: MapaProfessoresProps) {
       .eq('disponivel', true)
       .not('lat', 'is', null)
       .then(({ data }) => setProfessores((data as ProfPin[]) ?? []))
-  }, [])
+  }, [supabase])
 
   const professoresFiltrados = userPos
     ? professores.filter(p =>

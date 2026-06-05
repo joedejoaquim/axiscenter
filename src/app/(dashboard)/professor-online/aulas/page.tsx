@@ -33,7 +33,7 @@ export default async function AulasPage() {
         </Card>
       ) : (
         <div className="space-y-3">
-          {aulas.map((aula: any) => (
+          {aulas.map((aula: { id: string; titulo: string; tipo: string; matriculas: number; status: string; sala_nome?: string }) => (
             <Card key={aula.id} className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-4 flex-1 min-w-0">
                 <div className="h-14 w-14 shrink-0 rounded-2xl bg-gradient-to-br from-[#0D2B5E] to-slate-700" />

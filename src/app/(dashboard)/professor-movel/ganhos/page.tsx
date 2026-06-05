@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { DollarSign, TrendingUp, BarChart2 } from 'lucide-react'
 
+type Pagamento = { id: string; status: string; valor: number | string; tipo: string; descricao?: string; created_at: string }
+
 export default async function GanhosMovelPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -13,8 +15,8 @@ export default async function GanhosMovelPage() {
     .from('pagamentos').select('*').eq('user_id', user.id)
     .order('created_at', { ascending: false })
 
-  const total = (pagamentos ?? []).filter((p: any) => p.status === 'aprovado')
-    .reduce((acc: number, p: any) => acc + Number(p.valor), 0)
+  const total = (pagamentos ?? []).filter((p: Pagamento) => p.status === 'aprovado')
+    .reduce((acc: number, p: Pagamento) => acc + Number(p.valor), 0)
 
   return (
     <div className="space-y-6">
@@ -43,7 +45,7 @@ export default async function GanhosMovelPage() {
         <div className="space-y-3">
           {(!pagamentos || pagamentos.length === 0) ? (
             <p className="text-sm text-slate-400 text-center py-8">Nenhuma transacção ainda.</p>
-          ) : (pagamentos as any[]).map(p => (
+          ) : (pagamentos as Pagamento[]).map(p => (
             <div key={p.id} className="flex items-center justify-between py-2 border-b border-slate-100 last:border-0">
               <div>
                 <p className="text-sm font-medium">{p.descricao ?? p.tipo}</p>

@@ -22,7 +22,7 @@ export default async function CursosPage() {
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {(aulas ?? []).map((aula: any) => {
+        {(aulas ?? []).map((aula: { id: string; plano: string; titulo: string; descricao?: string; profiles?: { name: string; rating: number } }) => {
           const bloqueado = aula.plano === 'pro' && profile?.plan !== 'pro'
           return (
             <Card key={aula.id} className={bloqueado ? 'opacity-70' : ''}>

@@ -23,7 +23,7 @@ export default async function AdminDashboard() {
     supabase.from('pagamentos').select('valor').eq('status', 'aprovado'),
   ])
 
-  const receita = (pagamentos ?? []).reduce((acc: number, p: any) => acc + Number(p.valor), 0)
+  const receita = (pagamentos ?? []).reduce((acc: number, p: { valor: number | string }) => acc + Number(p.valor), 0)
 
   return (
     <div className="space-y-8">

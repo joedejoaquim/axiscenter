@@ -42,7 +42,7 @@ export function useNotificacoes() {
         .subscribe()
       return () => { supabase.removeChannel(channel) }
     })
-  }, [])
+  }, [supabase])
 
   const marcarLida = async (id: string) => {
     await supabase.from('notificacoes').update({ lida: true }).eq('id', id)

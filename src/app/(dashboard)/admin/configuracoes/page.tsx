@@ -21,7 +21,7 @@ export default function ConfiguracoesAdminPage() {
     supabase.from('configuracoes').select('*').single().then(({ data }) => {
       if (data) setForm(f => ({ ...f, ...data }))
     })
-  }, [])
+  }, [supabase])
 
   const set = (k: string, v: string) => setForm(f => ({ ...f, [k]: v }))
 

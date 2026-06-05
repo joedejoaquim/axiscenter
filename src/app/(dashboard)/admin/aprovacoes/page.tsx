@@ -28,7 +28,7 @@ export default async function AprovacoesPage() {
         </Card>
       ) : (
         <div className="space-y-3">
-          {(pendentes as any[]).map(p => (
+          {(pendentes as Array<{ id: string; name: string; email: string; role: string; created_at: string }>).map(p => (
             <Card key={p.id} className="flex items-center justify-between gap-4 flex-wrap">
               <div>
                 <p className="font-semibold text-slate-900">{p.name}</p>

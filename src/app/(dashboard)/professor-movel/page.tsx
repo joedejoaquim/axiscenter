@@ -1,7 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { Card } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
 import { BarChart2, Users, MapPin } from 'lucide-react'
 import { DisponibilidadeToggle } from './DisponibilidadeToggle'
 
@@ -21,7 +20,7 @@ export default async function ProfessorMovelDashboard() {
       .eq('professor_id', user.id).eq('status', 'pendente').order('created_at', { ascending: false }),
   ])
 
-  const totalGanhos = (ganhos ?? []).reduce((acc: number, p: any) => acc + Number(p.valor), 0)
+  const totalGanhos = (ganhos ?? []).reduce((acc: number, p: { valor: number | string }) => acc + Number(p.valor), 0)
 
   return (
     <div className="space-y-8">
@@ -56,7 +55,7 @@ export default async function ProfessorMovelDashboard() {
         <div>
           <h2 className="text-lg font-semibold mb-4">Solicitações Pendentes</h2>
           <div className="space-y-3">
-            {(solicitacoes as any[]).map(s => (
+            {(solicitacoes as Array<{ id: string; profiles?: { name: string }; data_hora: string; endereco?: string }>).map(s => (
               <Card key={s.id} className="flex items-center justify-between gap-4 flex-wrap">
                 <div>
                   <p className="font-medium text-slate-900">{s.profiles?.name}</p>

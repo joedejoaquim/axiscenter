@@ -19,7 +19,7 @@ export default async function ProfessorOnlineDashboard() {
     supabase.from('pagamentos').select('valor').eq('user_id', user.id).eq('status', 'aprovado'),
   ])
 
-  const totalGanhos = (ganhos ?? []).reduce((acc: number, p: any) => acc + Number(p.valor), 0)
+  const totalGanhos = (ganhos ?? []).reduce((acc: number, p: { valor: number | string }) => acc + Number(p.valor), 0)
 
   const { data: aulasRecentes } = await supabase
     .from('aulas').select('*').eq('professor_id', user.id)
@@ -62,7 +62,7 @@ export default async function ProfessorOnlineDashboard() {
           <Link href="/professor-online/aulas" className="text-sm text-[#F97316] hover:underline">Ver todas →</Link>
         </div>
         <div className="space-y-3">
-          {(aulasRecentes ?? []).map((aula: any) => (
+          {(aulasRecentes ?? []).map((aula: { id: string; titulo: string; tipo: string; matriculas: number; status: string }) => (
             <Card key={aula.id} padding="sm" className="flex items-center justify-between gap-4">
               <div className="flex-1 min-w-0">
                 <p className="font-medium text-slate-900 truncate">{aula.titulo}</p>

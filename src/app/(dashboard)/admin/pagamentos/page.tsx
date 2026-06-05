@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { DollarSign, TrendingUp, AlertCircle } from 'lucide-react'
 
+type Pagamento = { id: string; status: string; valor: number | string; tipo: string; metodo: string; created_at: string; profiles?: { name: string; email: string } }
+
 export default async function PagamentosAdminPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
@@ -14,9 +16,9 @@ export default async function PagamentosAdminPage() {
     .select('*, profiles(name, email)')
     .order('created_at', { ascending: false })
 
-  const aprovados = (pagamentos ?? []).filter((p: any) => p.status === 'aprovado')
-  const pendentes = (pagamentos ?? []).filter((p: any) => p.status === 'pendente')
-  const totalReceita = aprovados.reduce((acc: number, p: any) => acc + Number(p.valor), 0)
+  const aprovados = (pagamentos ?? []).filter((p: Pagamento) => p.status === 'aprovado')
+  const pendentes = (pagamentos ?? []).filter((p: Pagamento) => p.status === 'pendente')
+  const totalReceita = aprovados.reduce((acc: number, p: Pagamento) => acc + Number(p.valor), 0)
 
   return (
     <div className="space-y-6">
@@ -51,7 +53,7 @@ export default async function PagamentosAdminPage() {
               </tr>
             </thead>
             <tbody>
-              {(pagamentos as any[] ?? []).map(p => (
+              {(pagamentos as Pagamento[] ?? []).map(p => (
                 <tr key={p.id} className="border-b border-slate-50 hover:bg-slate-50/50">
                   <td className="py-3 pl-4">
                     <p className="font-medium text-slate-900">{p.profiles?.name ?? '—'}</p>

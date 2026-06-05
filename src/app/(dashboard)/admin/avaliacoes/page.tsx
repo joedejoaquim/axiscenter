@@ -17,7 +17,7 @@ export default async function AvaliacoesAdminPage() {
     .order('created_at', { ascending: false })
 
   const media = (avaliacoes ?? []).length > 0
-    ? ((avaliacoes ?? []).reduce((acc: number, a: any) => acc + a.nota, 0) / (avaliacoes ?? []).length).toFixed(1)
+    ? ((avaliacoes ?? []).reduce((acc: number, a: { nota: number }) => acc + a.nota, 0) / (avaliacoes ?? []).length).toFixed(1)
     : '—'
 
   return (
@@ -35,7 +35,7 @@ export default async function AvaliacoesAdminPage() {
           <Card className="py-16 text-center">
             <p className="text-slate-400">Nenhuma avaliação registada.</p>
           </Card>
-        ) : (avaliacoes as any[]).map(av => (
+        ) : (avaliacoes as Array<{ id: string; aluno?: { name: string }; professor?: { name: string }; comentario?: string; created_at: string; nota: number }>).map(av => (
           <Card key={av.id} className="flex items-start justify-between gap-4 flex-wrap">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
@@ -43,7 +43,7 @@ export default async function AvaliacoesAdminPage() {
                 <span className="text-slate-400 text-sm">→</span>
                 <span className="font-semibold text-slate-900">{av.professor?.name ?? 'Professor'}</span>
               </div>
-              {av.comentario && <p className="text-sm text-slate-600 italic">"{av.comentario}"</p>}
+              {av.comentario && <p className="text-sm text-slate-600 italic">&ldquo;{av.comentario}&rdquo;</p>}
               <p className="text-xs text-slate-400 mt-1">{new Date(av.created_at).toLocaleDateString('pt-AO')}</p>
             </div>
             <div className="flex items-center gap-1 text-[#F97316] shrink-0">

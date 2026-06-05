@@ -10,7 +10,7 @@ interface ChatSalaProps {
   userName: string
 }
 
-export function ChatSala({ aulaId, userName }: ChatSalaProps) {
+export function ChatSala({ aulaId }: ChatSalaProps) {
   const { mensagens, enviar, loading } = useRealtimeChat(aulaId)
   const [texto, setTexto] = useState('')
   const bottomRef = useRef<HTMLDivElement>(null)

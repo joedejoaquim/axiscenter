@@ -16,7 +16,7 @@ export default function NovaAulaPage() {
     tipo: 'gravada', plano: 'gratuito', duracao_min: 60,
   })
 
-  const set = (k: string, v: any) => setForm(f => ({ ...f, [k]: v }))
+  const set = (k: string, v: string | number) => setForm(f => ({ ...f, [k]: v }))
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

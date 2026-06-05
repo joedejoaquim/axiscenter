@@ -13,7 +13,7 @@ export default async function UsuariosPage() {
     .from('profiles').select('id, name, email, role, plan, status, created_at')
     .order('created_at', { ascending: false })
 
-  const roleColor: Record<string, any> = {
+  const roleColor: Record<string, 'primary' | 'success' | 'accent' | 'warning' | 'neutral'> = {
     admin: 'primary', aluno: 'success', 'professor-online': 'accent', 'professor-movel': 'warning',
   }
 
@@ -38,7 +38,7 @@ export default async function UsuariosPage() {
               </tr>
             </thead>
             <tbody>
-              {(usuarios as any[] ?? []).map(u => (
+              {(usuarios as Array<{ id: string; name: string; email: string; role: string; plan: string; status: string; created_at: string }> ?? []).map(u => (
                 <tr key={u.id} className="border-b border-slate-50 hover:bg-slate-50/50">
                   <td className="py-3 pl-4">
                     <p className="font-medium text-slate-900">{u.name}</p>

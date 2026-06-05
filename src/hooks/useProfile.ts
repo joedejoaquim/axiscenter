@@ -16,7 +16,7 @@ export function useProfile() {
       setProfile(data)
       setLoading(false)
     })
-  }, [])
+  }, [supabase])
 
   return { profile, loading }
 }

@@ -31,7 +31,7 @@ export default async function AgendaPage() {
         </Card>
       ) : (
         <div className="space-y-4">
-          {agendamentos.map((ag: any) => (
+          {agendamentos.map((ag: { id: string; profiles?: { name: string }; data_hora: string; formato: string; status: string }) => (
             <Card key={ag.id} className="flex items-center gap-4">
               <div className="rounded-2xl bg-[#0D2B5E]/10 p-3 shrink-0">
                 <Calendar size={20} className="text-[#0D2B5E]" />

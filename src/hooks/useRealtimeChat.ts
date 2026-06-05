@@ -38,7 +38,7 @@ export function useRealtimeChat(aulaId: string) {
       .subscribe()
 
     return () => { supabase.removeChannel(channel) }
-  }, [aulaId])
+  }, [aulaId, supabase])
 
   const enviar = async (message: string) => {
     const { data: { user } } = await supabase.auth.getUser()

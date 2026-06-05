@@ -63,7 +63,7 @@ export default function LoginPage() {
             </div>
           </div>
           <blockquote className="border-l-4 border-[#F97316] pl-5 text-slate-300 italic">
-            "A educação não é o enchimento de um balde, mas o acendimento de uma chama."
+            &ldquo;A educação não é o enchimento de um balde, mas o acendimento de uma chama.&rdquo;
             <footer className="mt-3 text-xs uppercase tracking-[0.3em] text-slate-500 not-italic">— William Butler Yeats</footer>
           </blockquote>
         </div>
