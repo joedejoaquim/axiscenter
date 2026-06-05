@@ -56,7 +56,7 @@ export default async function CursoDetailPage({ params }: { params: Promise<{ id
         <div>
           <p className="font-semibold text-slate-900">{aula.profiles?.name}</p>
           {aula.profiles?.bio && <p className="text-sm text-slate-500 mt-0.5 line-clamp-2">{aula.profiles.bio}</p>}
-          {aula.profiles?.rating > 0 && <p className="text-sm text-[#F97316] mt-1">⭐ {aula.profiles.rating}</p>}
+          {aula.profiles?.rating != null && aula.profiles.rating > 0 && <p className="text-sm text-[#F97316] mt-1">⭐ {aula.profiles.rating}</p>}
         </div>
       </Card>
 

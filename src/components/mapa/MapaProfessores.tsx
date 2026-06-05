@@ -89,7 +89,7 @@ export function MapaProfessores({ raioKm = 20 }: MapaProfessoresProps) {
                   <p className="text-xs text-[#F97316] font-semibold">
                     {p.preco_hora > 0 ? `${p.preco_hora} Kz/h` : 'A negociar'}
                   </p>
-                  {p.profiles?.rating > 0 && (
+                  {p.profiles?.rating != null && p.profiles.rating > 0 && (
                     <p className="text-xs text-slate-500">⭐ {p.profiles.rating.toFixed(1)}</p>
                   )}
                 </div>
