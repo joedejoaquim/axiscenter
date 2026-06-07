@@ -51,24 +51,30 @@ export default function Home() {
 
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-[#0D2B5E]">Diferenciais do curso</h2>
-            <div className="rounded-2xl bg-white p-8 shadow-lg border border-slate-200 max-w-2xl">
-              <h3 className="text-xl font-semibold text-[#0D2B5E]">Diferencial do curso</h3>
-              <p className="mt-3 text-slate-700 font-semibold">AULAS DIRETAS AO PONTO</p>
-              <p className="mt-2 text-slate-600">Vídeos curtos, sem enrolação e focado na resolução de exercícios</p>
+            <div className="rounded-2xl bg-slate-950 p-8 shadow-lg border border-slate-900 max-w-2xl text-white">
+              <div className="rounded-3xl bg-white p-6 text-[#0D2B5E] shadow-sm">
+                <h3 className="text-xl font-semibold">Diferencial do curso</h3>
+                <p className="mt-3 font-semibold">AULAS DIRETAS AO PONTO</p>
+                <p className="mt-2">Vídeos curtos, sem enrolação e focado na resolução de exercícios</p>
+              </div>
 
-              <h3 className="mt-6 text-xl font-semibold text-[#0D2B5E]">Professores</h3>
-              <p className="mt-3 text-slate-700 font-semibold">PROFESSORES DISPONÍVEIS</p>
-              <p className="mt-2 text-slate-600">A qualquer momento temos professores para ajudar na sua evolução quando você travar em algum exercício</p>
+              <div className="mt-6 rounded-3xl bg-white p-6 text-[#0D2B5E] shadow-sm">
+                <h3 className="text-xl font-semibold">Professores</h3>
+                <p className="mt-3 font-semibold">PROFESSORES DISPONÍVEIS</p>
+                <p className="mt-2">A qualquer momento temos professores para ajudar na sua evolução quando você travar em algum exercício</p>
+              </div>
 
-              <h3 className="mt-6 text-xl font-semibold text-[#0D2B5E]">MÉTODO PASSO A PASSO DESDE A MATEMÁTICA BÁSICA</h3>
-              <p className="mt-3 text-slate-600">Todo conteúdo de matemática que você precisa para ser aprovado</p>
+              <div className="mt-6 rounded-3xl bg-white p-6 text-[#0D2B5E] shadow-sm">
+                <h3 className="text-xl font-semibold">MÉTODO PASSO A PASSO DESDE A MATEMÁTICA BÁSICA</h3>
+                <p className="mt-3">Todo conteúdo de matemática que você precisa para ser aprovado</p>
+              </div>
             </div>
           </div>
 
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-[#0D2B5E]">Para quem é?</h2>
             <div className="rounded-2xl bg-white p-8 shadow-lg border border-slate-200 max-w-2xl">
-              <div className="grid gap-6 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div className="space-y-3 text-center">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-100 text-[#0D2B5E]">
                     <FontAwesomeIcon icon={faGraduationCap} className="h-12 w-12" aria-hidden />
