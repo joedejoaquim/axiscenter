@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faCheckCircle, faGraduationCap, faClipboardList } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   return (
@@ -64,66 +65,43 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-[#0D2B5E]">Para quem é?</h2>
+            <div className="rounded-2xl bg-white p-8 shadow-lg border border-slate-200 max-w-2xl">
+              <div className="grid gap-6 md:grid-cols-3">
+                <div className="space-y-3 text-center">
+                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-100 text-[#0D2B5E]">
+                    <FontAwesomeIcon icon={faGraduationCap} className="h-12 w-12" aria-hidden />
+                  </div>
+                  <p className="text-sm font-semibold text-[#0D2B5E]">Estudante</p>
+                </div>
+                <div className="space-y-3 text-center">
+                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-100 text-[#0D2B5E]">
+                    <FontAwesomeIcon icon={faClipboardList} className="h-12 w-12" aria-hidden />
+                  </div>
+                  <p className="text-sm font-semibold text-[#0D2B5E]">Concurseiro</p>
+                </div>
+                <div className="space-y-3 text-center">
+                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-slate-100 text-[#0D2B5E]">
+                    <FontAwesomeIcon icon={faBookOpen} className="h-12 w-12" aria-hidden />
+                  </div>
+                  <p className="text-sm font-semibold text-[#0D2B5E]">Reforço</p>
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-col gap-4 rounded-2xl bg-slate-100 p-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm font-semibold text-slate-700">quer ser o proximo a paroar</p>
+                <button className="inline-flex items-center gap-2 rounded-full bg-[#F97316] px-5 py-3 text-sm font-semibold text-white hover:bg-[#EA6C0A]">
+                  <span>Avançar</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+          </div>
+
           {/* Removed dashboard preview as requested */}
         </section>
 
-        {/* Planos */}
-        <section className="py-16" id="planos">
-          <p className="text-sm uppercase tracking-[0.3em] text-[#F97316]">Planos que acompanham seu ritmo.</p>
-          <h2 className="mt-3 text-3xl font-bold text-[#0D2B5E]">Simples, prático e personalizado.</h2>
-          <div className="mt-10 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-[40px] border border-slate-200 bg-white p-8 shadow-sm">
-              <span className="text-xs uppercase tracking-[0.3em] text-slate-500">Básico</span>
-              <h3 className="mt-4 text-3xl font-semibold text-[#0D2B5E]">Plano Grátis</h3>
-              <p className="mt-2 text-slate-600">Kz 0/mês</p>
-              <ul className="mt-8 space-y-3 text-slate-600 text-sm">
-                <li>✅ Acesso a 5 cursos básicos</li>
-                <li>✅ Comunidade de alunos</li>
-                <li>✅ Certificados básicos</li>
-              </ul>
-              <Link href="/register" className="mt-8 inline-flex w-full justify-center rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800 transition-colors">
-                Começar agora
-              </Link>
-            </div>
-            <div className="relative overflow-hidden rounded-[40px] bg-[#0D2B5E] px-8 py-10 text-white shadow-2xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,255,255,0.15),_transparent_20%)]" />
-              <div className="relative">
-                <span className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-white/80">Mais popular</span>
-                <h3 className="mt-5 text-4xl font-bold">Plano PRO ✨</h3>
-                <p className="mt-2 text-lg text-white/80">Kz 89.900/mês</p>
-                <ul className="mt-8 space-y-3 text-white/90 text-sm">
-                  <li>✅ Acesso ilimitado +200 cursos</li>
-                  <li>✅ Desconto de 30% em professores móveis</li>
-                  <li>✅ Certificados reconhecidos</li>
-                  <li>✅ Suporte VIP 24/7</li>
-                </ul>
-                <Link href="/register" className="mt-10 inline-flex w-full justify-center rounded-full bg-[#F97316] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-[#EA6C0A] transition-colors">
-                  Assinar PRO
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Final */}
-        <section className="pb-20">
-          <div className="rounded-[40px] bg-[#0D2B5E] px-8 py-10 text-white shadow-2xl sm:px-12">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <p className="text-sm uppercase tracking-[0.3em] text-white/70">Pronto para encontrar seu eixo de crescimento?</p>
-                <h3 className="mt-3 text-3xl font-bold">Junte-se a milhares de alunos que já estão acelerando seu aprendizado com a Axis.</h3>
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row shrink-0">
-                <Link href="/register" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0D2B5E]">
-                  Criar conta gratuita
-                </Link>
-                <Link href="/login" className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 transition-colors">
-                  Entrar
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
   )
