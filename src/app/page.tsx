@@ -32,7 +32,7 @@ export default function Home() {
               O eixo da sua <span className="text-[#F97316]">evolução</span> começa aqui.
             </h1>
 
-            <div className="rounded-2xl bg-white p-8 shadow-lg border border-slate-200 max-w-2xl">
+            <div className="bg-white p-8 shadow-lg border border-slate-200 max-w-2xl">
               <h2 className="text-3xl font-extrabold text-[#0D2B5E]">Prof Hélder</h2>
               <p className="mt-1 text-lg font-semibold text-[#F97316]">Matemática sem limites</p>
 
@@ -52,7 +52,7 @@ export default function Home() {
               </ul>
 
               <div className="mt-6">
-                <button className="w-full rounded-full bg-[#F97316] px-5 py-3 text-sm font-semibold text-white hover:bg-[#EA6C0A]">ASSINE AGORA!</button>
+                <button className="w-full bg-[#F97316] px-5 py-3 text-sm font-semibold text-white hover:bg-[#EA6C0A]">ASSINE AGORA!</button>
               </div>
             </div>
 
@@ -61,20 +61,20 @@ export default function Home() {
 
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-[#0D2B5E]">Diferenciais do curso</h2>
-            <div className="rounded-2xl bg-slate-950 p-8 shadow-lg border border-slate-900 max-w-2xl text-white">
-              <div className="rounded-3xl bg-white p-6 text-[#0D2B5E] shadow-sm">
+            <div className="bg-slate-950 p-8 shadow-lg border border-slate-900 max-w-2xl text-white">
+              <div className="bg-white p-6 text-[#0D2B5E] shadow-sm">
                 <h3 className="text-xl font-semibold">Diferencial do curso</h3>
                 <p className="mt-3 font-semibold">AULAS DIRETAS AO PONTO</p>
                 <p className="mt-2">Vídeos curtos, sem enrolação e focado na resolução de exercícios</p>
               </div>
 
-              <div className="mt-6 rounded-3xl bg-white p-6 text-[#0D2B5E] shadow-sm">
+              <div className="mt-6 bg-white p-6 text-[#0D2B5E] shadow-sm">
                 <h3 className="text-xl font-semibold">Professores</h3>
                 <p className="mt-3 font-semibold">PROFESSORES DISPONÍVEIS</p>
                 <p className="mt-2">A qualquer momento temos professores para ajudar na sua evolução quando você travar em algum exercício</p>
               </div>
 
-              <div className="mt-6 rounded-3xl bg-white p-6 text-[#0D2B5E] shadow-sm">
+              <div className="mt-6 bg-white p-6 text-[#0D2B5E] shadow-sm">
                 <h3 className="text-xl font-semibold">MÉTODO PASSO A PASSO DESDE A MATEMÁTICA BÁSICA</h3>
                 <p className="mt-3">Todo conteúdo de matemática que você precisa para ser aprovado</p>
               </div>
@@ -82,7 +82,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-2xl bg-[#F97316] p-8 shadow-lg border border-slate-200 max-w-2xl">
+            <div className="bg-[#F97316] p-8 shadow-lg border border-slate-200 max-w-2xl">
               <h2 className="text-3xl font-bold text-white mb-6">Para quem é?</h2>
               <div className="grid grid-cols-1 gap-6">
                 <div className="space-y-3 text-center">
@@ -105,9 +105,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-4 rounded-2xl bg-white p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-6 flex flex-col gap-4 bg-white p-4 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm font-semibold text-[#F97316]">Quer ser o próximo a aprovar?</p>
-                <button className="inline-flex items-center gap-2 rounded-full bg-[#0D2B5E] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0b2548]">
+                <button className="inline-flex items-center gap-2 bg-[#0D2B5E] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0b2548]">
                   <span>Avançar</span>
                   <ArrowRight size={16} />
                 </button>
@@ -116,7 +116,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-2xl bg-white p-6 shadow-lg border border-slate-200 max-w-2xl">
+            <div className="bg-white p-6 shadow-lg border border-slate-200 max-w-2xl">
               <h3 className="text-2xl font-bold text-[#0D2B5E]">CURSO DE MATEMÁTICA COMPLETA</h3>
               <p className="text-xl font-extrabold text-[#0D2B5E]">BOBERA</p>
 
@@ -137,14 +137,14 @@ export default function Home() {
               <div className="mt-4 border-t pt-4">
                 <p className="text-lg font-semibold text-[#0D2B5E]">27.000 Kz à vista ou apenas 12× de 3500 Kz</p>
                 <div className="mt-4">
-                  <button className="w-full rounded-full bg-[#0D2B5E] px-5 py-3 text-sm font-extrabold text-white">QUERO SER ALUNO</button>
+                  <button className="w-full bg-[#0D2B5E] px-5 py-3 text-sm font-extrabold text-white">QUERO SER ALUNO</button>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-2xl bg-white p-6 shadow-lg border border-slate-200 max-w-2xl">
+            <div className="bg-white p-6 shadow-lg border border-slate-200 max-w-2xl">
               <h3 className="text-2xl font-bold text-[#0D2B5E]">CURSO DE MATEMÁTICA COMPLETA</h3>
               <p className="text-xl font-extrabold text-[#F97316]">MATEMÁTICA PREMIUM</p>
 
@@ -161,11 +161,11 @@ export default function Home() {
               <p className="mt-4 text-slate-700 text-sm">Clique abaixo e conheça o curso mais completo do professor Hélder, que te transforma numa máquina de acertar questões</p>
 
               <div className="mt-4">
-                <button className="w-full rounded-full bg-[#0D2B5E] px-5 py-3 text-sm font-extrabold text-white hover:bg-[#0b2548]">QUERO SER ALUNO</button>
+                <button className="w-full bg-[#0D2B5E] px-5 py-3 text-sm font-extrabold text-white hover:bg-[#0b2548]">QUERO SER ALUNO</button>
               </div>
 
               <div className="mt-4">
-                <button onClick={() => setIsModalOpen(true)} className="w-full text-center rounded-full bg-transparent px-5 py-3 text-sm font-semibold text-[#0D2B5E] hover:underline">Quer conhecer o plano do curso ➡️</button>
+                <button onClick={() => setIsModalOpen(true)} className="w-full text-center bg-transparent px-5 py-3 text-sm font-semibold text-[#0D2B5E] hover:underline">Quer conhecer o plano do curso ➡️</button>
               </div>
             </div>
           </div>
@@ -176,11 +176,11 @@ export default function Home() {
       </div>
 
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="rounded-2xl bg-gradient-to-r from-[#F97316] to-[#F97316]/80 p-8 text-center shadow-lg">
+        <div className="bg-gradient-to-r from-[#F97316] to-[#F97316]/80 p-8 text-center shadow-lg">
           <p className="text-lg font-semibold text-white mb-4">
             Quer experimentar GRATUITAMENTE algumas aulas que já estão disponíveis dentro do curso Bobera?
           </p>
-          <button className="rounded-full bg-white px-6 py-3 text-sm font-extrabold text-[#F97316] hover:bg-slate-100">
+          <button className="bg-white px-6 py-3 text-sm font-extrabold text-[#F97316] hover:bg-slate-100">
             Experimentar agora
           </button>
         </div>
@@ -189,7 +189,7 @@ export default function Home() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative rounded-2xl bg-white max-w-4xl w-full mx-4 p-8 shadow-lg max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-white max-w-4xl w-full mx-4 p-8 shadow-lg max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setIsModalOpen(false)}
               className="absolute top-4 right-4 text-slate-500 hover:text-slate-700"
