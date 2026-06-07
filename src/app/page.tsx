@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
   return (
@@ -7,49 +9,41 @@ export default function Home() {
       {/* Navbar */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-5 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
-          <Image src="/assets/logoaxis.png" alt="Axis Center" width={384} height={384} className="rounded-lg" />
+          <Image src="/assets/logoaxis.png" alt="Axis Center" width={80} height={80} className="rounded-lg" />
           <span className="text-xl font-bold text-[#0D2B5E]">Axis Center</span>
         </div>
-        <div className="flex items-center gap-3">
-          <Link href="/login" className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-[#0D2B5E] hover:bg-slate-50 transition-colors">
-            Entrar
-          </Link>
-          <Link href="/register" className="rounded-full bg-[#F97316] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#EA6C0A] transition-colors">
-            Criar conta
-          </Link>
-        </div>
+        <div />
       </nav>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <section className="grid gap-14 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-8">
-            <span className="inline-flex rounded-full bg-[#F97316]/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-[#F97316]">
-              Conectando conhecimento
-            </span>
-            <div className="space-y-5">
-              <h1 className="text-5xl font-bold tracking-tight text-[#0D2B5E] sm:text-6xl">
-                O eixo da sua <span className="text-[#F97316]">evolução</span> começa aqui.
-              </h1>
-              <p className="max-w-xl text-lg leading-8 text-slate-600">
-                A plataforma completa que une aulas online interativas com a conveniência de professores particulares que vão até você.
-              </p>
-            </div>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="/register" className="inline-flex items-center justify-center rounded-full bg-[#F97316] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-[#F97316]/20 hover:bg-[#EA6C0A] transition-colors">
-                Criar conta gratuita
-              </Link>
-              <Link href="/login" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-base font-semibold text-[#0D2B5E] shadow-sm hover:border-slate-300 transition-colors">
-                Entrar
-              </Link>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              {[['15k+', 'Alunos Ativos'], ['4.9/5', 'Avaliação Média'], ['850+', 'Tutores Móveis']].map(([val, label]) => (
-                <div key={label} className="rounded-3xl border border-slate-200 bg-white px-5 py-4 text-center shadow-sm">
-                  <p className="text-2xl font-bold text-[#0D2B5E]">{val}</p>
-                  <p className="mt-1 text-sm text-slate-500">{label}</p>
-                </div>
-              ))}
+            <h1 className="text-5xl font-bold tracking-tight text-[#0D2B5E] sm:text-6xl">
+              O eixo da sua <span className="text-[#F97316]">evolução</span> começa aqui.
+            </h1>
+
+            <div className="rounded-2xl bg-white p-8 shadow-lg border border-slate-200 max-w-2xl">
+              <h2 className="text-2xl font-extrabold text-[#0D2B5E]">MATEMÁTICA COMPLETA</h2>
+              <p className="mt-3 text-slate-700">APRENDA TODA MATEMÁTICA, DESDE O ZERO, DE UMA VEZ POR TODAS DE FORMA RÁPIDA E EFICIENTE PARA GARANTIR SUA APROVAÇÃO</p>
+
+              <div className="mt-6 flex items-center gap-4">
+                <button className="rounded-full bg-[#F97316] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#EA6C0A]">ASSINE AGORA!</button>
+                <div className="text-sm text-slate-500">Prof Hélder — Matemática sem limites</div>
+              </div>
+
+              <ul className="mt-6 space-y-2 text-slate-700 list-inside">
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />MATEMÁTICA DO BÁSICO AO AVANÇADO</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />SIMULADOS POR MÓDULOS</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />AULAS AO VIVO DE REVISÃO</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />APRENDA A INTERPRETAR QUESTÕES</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />COMUNIDADE DE ALUNOS</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />ACESSO COMPLETO</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />EXERCÍCIOS RESOLVIDOS EM VÍDEO</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />ACESSO POR 12 MESES</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />CRONOGRAMA DE ESTUDOS</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1" aria-hidden />TODO CONTEÚDO DO SEU EDITAL</li>
+              </ul>
             </div>
           </div>
 
