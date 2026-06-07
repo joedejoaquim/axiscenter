@@ -63,13 +63,11 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-[#0D2B5E]">Diferenciais do curso</h2>
             <div className="bg-slate-950 p-8 shadow-lg border border-slate-900 max-w-2xl text-white">
               <div className="bg-white p-6 text-[#0D2B5E] shadow-sm">
-                <h3 className="text-xl font-semibold">Diferencial do curso</h3>
                 <p className="mt-3 font-semibold">AULAS DIRETAS AO PONTO</p>
                 <p className="mt-2">Vídeos curtos, sem enrolação e focado na resolução de exercícios</p>
               </div>
 
               <div className="mt-6 bg-white p-6 text-[#0D2B5E] shadow-sm">
-                <h3 className="text-xl font-semibold">Professores</h3>
                 <p className="mt-3 font-semibold">PROFESSORES DISPONÍVEIS</p>
                 <p className="mt-2">A qualquer momento temos professores para ajudar na sua evolução quando você travar em algum exercício</p>
               </div>
