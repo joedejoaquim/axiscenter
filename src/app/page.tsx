@@ -189,87 +189,112 @@ export default function Home() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-white max-w-4xl w-full mx-4 p-8 shadow-lg max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-[#F97316] text-white max-w-4xl w-full mx-4 p-8 shadow-lg max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-slate-500 hover:text-slate-700"
+              className="absolute top-4 right-4 text-white hover:text-slate-200"
               aria-label="Fechar modal"
             >
               <X size={24} />
             </button>
 
-            <h2 className="text-3xl font-bold text-[#0D2B5E] mb-8 text-center">O QUE VOCÊ VAI ESTUDAR</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">O QUE VOCÊ VAI ESTUDAR</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <ul className="space-y-3">
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Matemática Básica
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Matemática Básica</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Conjuntos
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Conjuntos</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Potenciação e Radiciação
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Potenciação e Radiciação</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Razões e proporções
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Razões e proporções</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Percentagem e Juros
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Percentagem e Juros</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Equações
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Equações</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Análise Combinatória
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Análise Combinatória</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Probabilidade
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Probabilidade</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Exponencial e Logaritmos
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Exponencial e Logaritmos</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Cálculos de Integrais
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Cálculos de Integrais</span>
                   </li>
                 </ul>
               </div>
 
               <div>
                 <ul className="space-y-3">
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Progressão Aritmética
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Progressão Aritmética</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Progressão Geométrica
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Progressão Geométrica</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Geometria Plana
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Geometria Plana</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Geometria Espacial
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Geometria Espacial</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Geometria Analítica
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Geometria Analítica</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Matrizes e Determinantes
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Matrizes e Determinantes</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Polinômios
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Polinômios</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Estatística
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Estatística</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Números Complexos
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Números Complexos</span>
                   </li>
-                  <li className="text-slate-700 flex items-start gap-2">
-                    <span className="text-[#0D2B5E] font-bold">•</span> Trigonometria
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">•</span>
+                    <span>Trigonometria</span>
                   </li>
                 </ul>
               </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-xl font-bold">Professor Hélder</p>
+              <p className="text-sm">Matemática Sem Limites</p>
             </div>
           </div>
         </div>
