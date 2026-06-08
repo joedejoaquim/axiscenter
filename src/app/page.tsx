@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, X } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faCheckCircle, faGraduationCap, faClipboardList, faQuestionCircle, faThumbsUp, faBulb } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faCheckCircle, faGraduationCap, faClipboardList, faQuestionCircle, faThumbsUp, faLightbulb } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
                 <button className="w-full bg-green-600 px-5 py-3 text-sm rounded-lg font-semibold text-white ">ASSINE AGORA!</button>
               </div>
             <div className="bg-white p-8 shadow-lg rounded-lg max-w-2xl mt-5">
-              <h2 className="text-xl font-extrabold text-orange-400 text-center flex items-center justify-center gap-2"><FontAwesomeIcon icon={faBulb} className="text-orange-400 h-6 w-6" aria-hidden /> Prof Hélder <FontAwesomeIcon icon={faBulb} className="text-orange-400 h-6 w-6" aria-hidden /></h2>
+              <h2 className="text-xl font-extrabold text-orange-400 text-center flex items-center justify-center gap-2"><FontAwesomeIcon icon={faLightbulb} className="text-orange-400 h-6 w-6" aria-hidden /> Prof Hélder <FontAwesomeIcon icon={faLightbulb} className="text-orange-400 h-6 w-6" aria-hidden /></h2>
               <p className="mt-1 text-lg font-semibold text-black text-center">Matemática sem limites</p>
 
 
