@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, X } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faCheckCircle, faGraduationCap, faClipboardList, faQuestionCircle, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faCheckCircle, faGraduationCap, faClipboardList, faQuestionCircle, faThumbsUp, faBulb } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 export default function Home() {
@@ -32,27 +32,27 @@ export default function Home() {
               O eixo da sua <span className="text-[#F97316]">evolução</span> começa aqui.
             </h1>
 <section className="bg-orange-400 p-8 shadow-lg border border-slate-200 rounded-lg max-w-2xl">
-      <p className="text-center text-white text-xl">MATEMÁTICA COMPLETA</p>
-              <p className="mt-4 text-slate-700 text-black">    APRENDA TODA MATEMÁTICA, DESDE O ZERO, DE UMA VEZ POR TODAS DE FORMA RÁPIDA E EFICIENTE PARA GARANTIR SUA APROVAÇÃO</p>
+      <p className="text-center text-white text-xl">MATEMÁTICA <br /> COMPLETA</p>
+              <p className="mt-4 text-slate-700 text-[#111]">    APRENDA TODA MATEMÁTICA, DESDE O ZERO, DE UMA VEZ POR TODAS DE FORMA <strong className='text-black font-bold'>RÁPIDA E EFICIENTE PARA GARANTIR SUA APROVAÇÃO</strong> </p>
               <div className="mt-6">
-                <button className="w-full bg-green-400 px-5 py-3 text-sm font-semibold text-white hover:bg-[#EA6C0A]">ASSINE AGORA!</button>
+                <button className="w-full bg-green-600 px-5 py-3 text-sm rounded-lg font-semibold text-white ">ASSINE AGORA!</button>
               </div>
             <div className="bg-white p-8 shadow-lg rounded-lg max-w-2xl mt-5">
-              <h2 className="text-3xl font-extrabold text-[#0D2B5E] text-center">Prof Hélder</h2>
-              <p className="mt-1 text-lg font-semibold text-[#F97316] text-center">Matemática sem limites</p>
+              <h2 className="text-xl font-extrabold text-orange-400 text-center flex items-center justify-center gap-2"><FontAwesomeIcon icon={faBulb} className="text-orange-400 h-6 w-6" aria-hidden /> Prof Hélder <FontAwesomeIcon icon={faBulb} className="text-orange-400 h-6 w-6" aria-hidden /></h2>
+              <p className="mt-1 text-lg font-semibold text-black text-center">Matemática sem limites</p>
 
 
               <ul className="mt-6 space-y-2 text-slate-700 list-inside">
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />MATEMÁTICA DO BÁSICO AO AVANÇADO</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />SIMULADOS POR MÓDULOS</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />AULAS AO VIVO DE REVISÃO</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />APRENDA A INTERPRETAR QUESTÕES</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />COMUNIDADE DE ALUNOS</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />ACESSO COMPLETO</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />EXERCÍCIOS RESOLVIDOS EM VÍDEO</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />ACESSO POR 12 MESES</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />CRONOGRAMA DE ESTUDOS</li>
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />TODO CONTEÚDO DO SEU EDITAL</li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px] ">MATEMÁTICA DO BÁSICO AO AVANÇADO</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">SIMULADOS POR MÓDULOS</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">AULAS AO VIVO DE REVISÃO</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">APRENDA A INTERPRETAR QUESTÕES</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">COMUNIDADE DE ALUNOS</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">ACESSO COMPLETO</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">EXERCÍCIOS RESOLVIDOS EM VÍDEO</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">ACESSO POR 12 MESES</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">CRONOGRAMA DE ESTUDOS</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">TODO CONTEÚDO DO SEU EDITAL</span></li>
               </ul>
 
             </div>
@@ -171,9 +171,11 @@ export default function Home() {
               </div>
 
             </div>
-              <div className="bg-black p-6 shadow-lg rounded-lg border border-slate-200 max-w-2xl mt-5 flex justify-center">
+              <div className="bg-black p-6 shadow-lg rounded-lg border border-slate-200 max-w-2xl mt-5 ">
                 <h2 className="text-xl font-bold text-white mb-4 text-center">Quer conhecer o plano completo do curso?</h2>
-                <button onClick={() => setIsModalOpen(true)} className=" text-center  px-5 py-3 text-sm font-semibold bg-orange-400 rounded-lg text-[#0D2B5E] hover:underline">Baixe Aqui</button>
+                <div className="flex justify-center">
+                  <button onClick={() => setIsModalOpen(true)} className="   px-5 py-3 text-sm font-semibold bg-orange-400 rounded-lg text-[#0D2B5E] hover:underline">Baixe Aqui</button>
+                </div>
               </div>
           </div>
 
