@@ -32,7 +32,7 @@ export default function Home() {
               O eixo da sua <span className="text-[#F97316]">evolução</span> começa aqui.
             </h1>
 <section className="bg-orange-400 p-8 shadow-lg border border-slate-200 rounded-lg max-w-2xl">
-      <p className="text-center text-wh text-xl">MATEMÁTICA <br /> COMPLETA</p>
+      <p className="text-center text-black text-xl">MATEMÁTICA <br /> COMPLETA</p>
               <p className="mt-4 text-slate-700 text-[#111]">    APRENDA TODA MATEMÁTICA, DESDE O ZERO, DE UMA VEZ POR TODAS DE FORMA <strong className='text-black font-bold'>RÁPIDA E EFICIENTE PARA GARANTIR SUA APROVAÇÃO</strong> </p>
               <div className="mt-6">
                 <button className="w-full bg-green-600 px-5 py-3 text-sm rounded-lg font-semibold text-white ">ASSINE AGORA!</button>
@@ -43,7 +43,7 @@ export default function Home() {
 
 
               <ul className="mt-6 space-y-2 text-slate-700 list-inside">
-                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px] ">MATEMÁTICA DO BÁSICO AO AVANÇADO</span></li>
+                <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500  mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px] ">MATEMÁTICA DO BÁSICO AO AVANÇADO</span></li>
                 <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">SIMULADOS POR MÓDULOS</span></li>
                 <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">AULAS AO VIVO DE REVISÃO</span></li>
                 <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden /> <span className="text-[10px]">APRENDA A INTERPRETAR QUESTÕES</span></li>
@@ -81,28 +81,28 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-[#F97316] p-8 shadow-lg border border-slate-200 max-w-2xl ">
-              <div className="rounded-lg flex justify-center bg-white p-5 ">
+          <div id="card-gt" className="space-y-6">
+              <div className=" ">
 
               <h2 className="text-3xl font-bold text-[#0D2B5E] ">Para quem é?</h2>
               </div>
-              <div className="grid grid-cols-1 gap-6 mt-5">
+              <div className="grid grid-cols-1 gap-6 mt-5 space-y-5">
+            <div className="bg-[#F97316] p-8 shadow-lg border border-slate-200 max-w-2xl ">
                 <div className="space-y-3 text-center">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white text-[#0D2B5E]">
-                    <FontAwesomeIcon icon={faGraduationCap} className="h-30 w-30" aria-hidden />
+                    <FontAwesomeIcon icon={faGraduationCap} className="h-10 w-10" aria-hidden />
                   </div>
                   <p className="text-sm font-semibold text-white">ESTUDANTE DO ENSINO DE BASE, MÉDIO E SUPERIOR</p>
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white text-[#0D2B5E]">
-                    <FontAwesomeIcon icon={faClipboardList} className="h-30 w-30" aria-hidden />
+                    <FontAwesomeIcon icon={faClipboardList} className="h-10 w-10" aria-hidden />
                   </div>
                   <p className="text-sm font-semibold text-white">CONCURSEIROS</p>
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white text-[#0D2B5E]">
-                    <FontAwesomeIcon icon={faBookOpen} className="h-30 w-30" aria-hidden />
+                    <FontAwesomeIcon icon={faBookOpen} className="h-10 w-10" aria-hidden />
                   </div>
                   <p className="text-sm font-semibold text-white">ESTUDANTE QUE PRECISAM DE REFORÇO EM MATEMÁTICA</p>
                 </div>
