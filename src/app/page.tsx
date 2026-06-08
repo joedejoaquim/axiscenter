@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, X } from 'lucide-react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookOpen, faCheckCircle, faGraduationCap, faClipboardList, faQuestionCircle, faThumbsUp, faLightbulb } from '@fortawesome/free-solid-svg-icons'
+import { faBookOpen, faCheckCircle, faGraduationCap, faClipboardList, faQuestionCircle, faThumbsUp, faLightbulb, faStar } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
 export default function Home() {
@@ -38,8 +38,8 @@ export default function Home() {
                 <button className="w-full bg-green-600 px-5 py-3 text-sm rounded-lg font-semibold text-white ">ASSINE AGORA!</button>
               </div>
             <div className="bg-white p-8 shadow-lg rounded-lg max-w-2xl mt-5">
-              <h2 className="text-xl font-extrabold text-orange-400 text-center flex items-center justify-center gap-2"><FontAwesomeIcon icon={faLightbulb} className="text-orange-400 h-6 w-6" aria-hidden /> Prof Hélder <FontAwesomeIcon icon={faLightbulb} className="text-orange-400 h-6 w-6" aria-hidden /></h2>
-              <p className="mt-1 text-lg font-semibold text-black text-center">Matemática sem limites</p>
+              <h2 className="text-lg font-extrabold text-orange-400 text-center flex items-center justify-center gap-2"><FontAwesomeIcon icon={faLightbulb} className="text-orange-400 h-6 w-6" aria-hidden /> Prof Hélder <FontAwesomeIcon icon={faLightbulb} className="text-orange-400 h-6 w-6" aria-hidden /></h2>
+              <p className="mt-1 text-base font-semibold text-black text-center">Matemática sem limites</p>
 
 
               <ul className="mt-6 space-y-2 text-slate-700 list-inside">
@@ -151,7 +151,11 @@ export default function Home() {
               
               <div className="  bg-orange-400 p-5 text-white ">
                 <h3 className="text-2xl text-center font-bold ">CURSO DE MATEMÁTICA COMPLETA</h3>
-                <p className="text-xl text-center font-extrabold ">MATEMÁTICA  <span  className="text-[#FFD700]">PREMIUM</span></p>
+              <div className="flex items-center justify-center gap-2">
+                <FontAwesomeIcon icon={faStar} className="text-[#FFD700] h-6 w-6" aria-hidden />
+                <p id="course-title" className="text-xl text-center font-extrabold ">MATEMÁTICA  <span  className="text-[#FFD700]">PREMIUM</span></p>
+                <FontAwesomeIcon icon={faStar} className="text-[#FFD700] h-6 w-6" aria-hidden />
+              </div>
               </div>
 
               <ul className="mt-4 space-y-3 text-slate-700 text-white">
