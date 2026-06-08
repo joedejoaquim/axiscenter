@@ -31,12 +31,16 @@ export default function Home() {
             <h1 className="text-4xl font-bold tracking-tight text-[#0D2B5E] sm:text-5xl">
               O eixo da sua <span className="text-[#F97316]">evolução</span> começa aqui.
             </h1>
+<section className="bg-orange-400 p-8 shadow-lg border border-slate-200 rounded-lg max-w-2xl">
+      <p className="text-center text-white text-xl">MATEMÁTICA COMPLETA</p>
+              <p className="mt-4 text-slate-700 text-black">    APRENDA TODA MATEMÁTICA, DESDE O ZERO, DE UMA VEZ POR TODAS DE FORMA RÁPIDA E EFICIENTE PARA GARANTIR SUA APROVAÇÃO</p>
+              <div className="mt-6">
+                <button className="w-full bg-green-400 px-5 py-3 text-sm font-semibold text-white hover:bg-[#EA6C0A]">ASSINE AGORA!</button>
+              </div>
+            <div className="bg-white p-8 shadow-lg rounded-lg max-w-2xl mt-5">
+              <h2 className="text-3xl font-extrabold text-[#0D2B5E] text-center">Prof Hélder</h2>
+              <p className="mt-1 text-lg font-semibold text-[#F97316] text-center">Matemática sem limites</p>
 
-            <div className="bg-white p-8 shadow-lg border border-slate-200 max-w-2xl">
-              <h2 className="text-3xl font-extrabold text-[#0D2B5E]">Prof Hélder</h2>
-              <p className="mt-1 text-lg font-semibold text-[#F97316]">Matemática sem limites</p>
-
-              <p className="mt-4 text-slate-700">MATEMÁTICA COMPLETA — APRENDA TODA MATEMÁTICA, DESDE O ZERO, DE UMA VEZ POR TODAS DE FORMA RÁPIDA E EFICIENTE PARA GARANTIR SUA APROVAÇÃO</p>
 
               <ul className="mt-6 space-y-2 text-slate-700 list-inside">
                 <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />MATEMÁTICA DO BÁSICO AO AVANÇADO</li>
@@ -51,23 +55,21 @@ export default function Home() {
                 <li className="flex items-start gap-2"><FontAwesomeIcon icon={faCheckCircle} className="text-emerald-500 mt-1 w-4 h-4 flex-shrink-0" aria-hidden />TODO CONTEÚDO DO SEU EDITAL</li>
               </ul>
 
-              <div className="mt-6">
-                <button className="w-full bg-[#F97316] px-5 py-3 text-sm font-semibold text-white hover:bg-[#EA6C0A]">ASSINE AGORA!</button>
-              </div>
             </div>
+</section>
 
 
           </div>
 
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-[#0D2B5E]">Diferenciais do curso</h2>
             <div className="bg-slate-950 p-8 shadow-lg border border-slate-900 max-w-2xl text-white">
-              <div className="bg-white p-6 text-[#0D2B5E] shadow-sm">
+            <h2 className="text-2xl font-bold text-white text-center ">Diferenciais do Curso</h2>
+              <div className="bg-white p-6 text-[#0D2B5E] shadow-sm mt-5">
                 <p className="mt-3 font-semibold">AULAS DIRETAS AO PONTO</p>
                 <p className="mt-2">Vídeos curtos, sem enrolação e focado na resolução de exercícios</p>
               </div>
 
-              <div className="mt-6 bg-white p-6 text-[#0D2B5E] shadow-sm">
+              <div className="mt-6 bg-white p-6  text-[#0D2B5E] shadow-sm">
                 <p className="mt-3 font-semibold">PROFESSORES DISPONÍVEIS</p>
                 <p className="mt-2">A qualquer momento temos professores para ajudar na sua evolução quando você travar em algum exercício</p>
               </div>
@@ -80,38 +82,41 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-[#F97316] p-8 shadow-lg border border-slate-200 max-w-2xl">
-              <h2 className="text-3xl font-bold text-white mb-6">Para quem é?</h2>
-              <div className="grid grid-cols-1 gap-6">
+            <div className="bg-[#F97316] p-8 shadow-lg border border-slate-200 max-w-2xl ">
+              <div className="rounded-lg flex justify-center bg-white p-5 ">
+
+              <h2 className="text-3xl font-bold text-[#0D2B5E] ">Para quem é?</h2>
+              </div>
+              <div className="grid grid-cols-1 gap-6 mt-5">
                 <div className="space-y-3 text-center">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white text-[#0D2B5E]">
-                    <FontAwesomeIcon icon={faGraduationCap} className="h-12 w-12" aria-hidden />
+                    <FontAwesomeIcon icon={faGraduationCap} className="h-30 w-30" aria-hidden />
                   </div>
                   <p className="text-sm font-semibold text-white">ESTUDANTE DO ENSINO DE BASE, MÉDIO E SUPERIOR</p>
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white text-[#0D2B5E]">
-                    <FontAwesomeIcon icon={faClipboardList} className="h-12 w-12" aria-hidden />
+                    <FontAwesomeIcon icon={faClipboardList} className="h-30 w-30" aria-hidden />
                   </div>
                   <p className="text-sm font-semibold text-white">CONCURSEIROS</p>
                 </div>
                 <div className="space-y-3 text-center">
                   <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white text-[#0D2B5E]">
-                    <FontAwesomeIcon icon={faBookOpen} className="h-12 w-12" aria-hidden />
+                    <FontAwesomeIcon icon={faBookOpen} className="h-30 w-30" aria-hidden />
                   </div>
                   <p className="text-sm font-semibold text-white">ESTUDANTE QUE PRECISAM DE REFORÇO EM MATEMÁTICA</p>
                 </div>
               </div>
 
+          </div>
               <div className="mt-6 flex flex-col gap-4 bg-white p-4 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm font-semibold text-[#F97316]">Quer ser o próximo a aprovar?</p>
                 <button className="inline-flex items-center gap-2 bg-[#0D2B5E] px-5 py-3 text-sm font-semibold text-white hover:bg-[#0b2548]">
-                  <span>Avançar</span>
+                  
                   <ArrowRight size={16} />
                 </button>
               </div>
             </div>
-          </div>
 
           <div className="space-y-6">
             <div className="bg-white p-6 shadow-lg border border-slate-200 max-w-2xl">
@@ -142,11 +147,14 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-white p-6 shadow-lg border border-slate-200 max-w-2xl">
-              <h3 className="text-2xl font-bold text-[#0D2B5E]">CURSO DE MATEMÁTICA COMPLETA</h3>
-              <p className="text-xl font-extrabold text-[#F97316]">MATEMÁTICA PREMIUM</p>
+            <div className="bg-black p-6 shadow-lg rounded-lg border border-slate-200 max-w-2xl">
+              
+              <div className="  bg-orange-400 p-5 text-white ">
+                <h3 className="text-2xl text-center font-bold ">CURSO DE MATEMÁTICA COMPLETA</h3>
+                <p className="text-xl text-center font-extrabold ">MATEMÁTICA  <span  className="text-[#FFD700]">PREMIUM</span></p>
+              </div>
 
-              <ul className="mt-4 space-y-3 text-slate-700">
+              <ul className="mt-4 space-y-3 text-slate-700 text-white">
                 <li className="flex items-start gap-3"><FontAwesomeIcon icon={faThumbsUp} className="text-emerald-500 h-4 w-4 flex-shrink-0 mt-1" />TUDO QUE TEM NO CURSO</li>
                 <li className="flex items-start gap-3"><FontAwesomeIcon icon={faThumbsUp} className="text-emerald-500 h-4 w-4 flex-shrink-0 mt-1" />ESTILO NETFLIX</li>
                 <li className="flex items-start gap-3"><FontAwesomeIcon icon={faThumbsUp} className="text-emerald-500 h-4 w-4 flex-shrink-0 mt-1" />PLANOS DE ESTUDO PERSONALIZADO</li>
@@ -156,16 +164,17 @@ export default function Home() {
                 <li className="flex items-start gap-3"><FontAwesomeIcon icon={faThumbsUp} className="text-emerald-500 h-4 w-4 flex-shrink-0 mt-1" />CADERNOS DIGITAIS</li>
               </ul>
 
-              <p className="mt-4 text-slate-700 text-sm">Clique abaixo e conheça o curso mais completo do professor Hélder, que te transforma numa máquina de acertar questões</p>
+              
 
               <div className="mt-4">
                 <button className="w-full bg-[#0D2B5E] px-5 py-3 text-sm font-extrabold text-white hover:bg-[#0b2548]">QUERO SER ALUNO</button>
               </div>
 
-              <div className="mt-4">
-                <button onClick={() => setIsModalOpen(true)} className="w-full text-center bg-transparent px-5 py-3 text-sm font-semibold text-[#0D2B5E] hover:underline">Quer conhecer o plano do curso ➡️</button>
-              </div>
             </div>
+              <div className="bg-black p-6 shadow-lg rounded-lg border border-slate-200 max-w-2xl mt-5 flex justify-center">
+                <h2 className="text-xl font-bold text-white mb-4 text-center">Quer conhecer o plano completo do curso?</h2>
+                <button onClick={() => setIsModalOpen(true)} className=" text-center  px-5 py-3 text-sm font-semibold bg-orange-400 rounded-lg text-[#0D2B5E] hover:underline">Baixe Aqui</button>
+              </div>
           </div>
 
           {/* Removed dashboard preview as requested */}
