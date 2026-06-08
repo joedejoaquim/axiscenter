@@ -187,20 +187,22 @@ export default function Home() {
       {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative bg-[#F97316] text-white max-w-4xl w-full mx-4 p-8 shadow-lg max-h-[90vh] overflow-y-auto">
+          <div className="relative bg-white text-[#0D2B5E] max-w-4xl w-full mx-4 p-8 shadow-lg max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-white hover:text-slate-200"
+              className="absolute top-4 right-4 text-[#0D2B5E] hover:text-slate-700"
               aria-label="Fechar modal"
             >
               <X size={24} />
             </button>
 
-            <h2 className="text-3xl font-bold mb-8 text-center">O QUE VOCÊ VAI ESTUDAR</h2>
+            <div className="mb-6 bg-[#F97316] text-white p-4">
+              <h2 className="text-3xl font-bold mb-0 text-center">O QUE VOCÊ VAI ESTUDAR</h2>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <ul className="space-y-3">
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-2">
                     <span className="font-bold">•</span>
                     <span>Matemática Básica</span>
@@ -245,7 +247,7 @@ export default function Home() {
               </div>
 
               <div>
-                <ul className="space-y-3">
+                <ul className="space-y-3 text-slate-700">
                   <li className="flex items-start gap-2">
                     <span className="font-bold">•</span>
                     <span>Progressão Aritmética</span>
