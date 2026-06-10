@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Axis Center — Escola Online',
   description: 'Domine matemática e garanta sua aprovação com aulas didáticas, exercícios resolvidos e suporte completo.',
   icons: {
-    icon: '/assets/logoaxis.png',
+    icon: '/favicon.ico',
     apple: '/assets/logoaxis.png',
   },
 }
