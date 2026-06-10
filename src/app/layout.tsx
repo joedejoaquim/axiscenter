@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   description: 'Domine matemática e garanta sua aprovação com aulas didáticas, exercícios resolvidos e suporte completo.',
   icons: {
     icon: '/favicon.ico',
-    apple: '/assets/logoaxis.png',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
 }
 
