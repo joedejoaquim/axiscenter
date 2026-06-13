@@ -5,14 +5,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Button } from '@/components/ui/Button'
-import { clsx } from 'clsx'
-import type { UserRole } from '@/types/database'
-
-const ROLES: { value: UserRole; label: string }[] = [
-  { value: 'aluno',            label: 'Aluno' },
-  { value: 'professor-online', label: 'Prof. Online' },
-  { value: 'professor-movel',  label: 'Prof. Móvel' },
-]
 
 export default function RegisterPage() {
   const router = useRouter()
@@ -21,7 +13,6 @@ export default function RegisterPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
-  const [role, setRole] = useState<UserRole>('aluno')
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
@@ -37,7 +28,7 @@ export default function RegisterPage() {
     const { error: authError } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { name, role } },
+      options: { data: { name, role: 'aluno' } },
     })
 
     if (authError) {
@@ -46,12 +37,7 @@ export default function RegisterPage() {
       return
     }
 
-    // Alunos ficam activos, professores ficam pendentes — tratado pelo trigger
-    if (role === 'aluno') {
-      router.push('/aluno')
-    } else {
-      router.push('/pendente')
-    }
+    router.push('/aluno')
   }
 
   return (
@@ -94,25 +80,6 @@ export default function RegisterPage() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Role selector */}
-            <div className="grid grid-cols-3 gap-3">
-              {ROLES.map(r => (
-                <label
-                  key={r.value}
-                  className={clsx(
-                    'cursor-pointer rounded-3xl border p-4 text-center text-sm font-semibold transition-colors',
-                    role === r.value
-                      ? 'border-[#F97316] bg-orange-50 text-[#F97316]'
-                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-slate-300'
-                  )}
-                >
-                  <input type="radio" name="role" value={r.value} checked={role === r.value}
-                    onChange={() => setRole(r.value)} className="sr-only" />
-                  {r.label}
-                </label>
-              ))}
-            </div>
-
             <div>
               <label className="block text-sm font-medium mb-1.5">Nome completo</label>
               <input type="text" value={name} onChange={e => setName(e.target.value)} required
