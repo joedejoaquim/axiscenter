@@ -413,7 +413,7 @@ export default function Home() {
             {/* Footer */}
             <div className="px-6 pb-6 flex gap-3">
               <Link
-                href="/register"
+                href="/checkout"
                 className="flex-1 flex items-center justify-center gap-2 rounded-full bg-[#F97316] px-5 py-3 text-sm font-black text-white hover:bg-[#E56E00] transition-colors shadow-md"
               >
                 Começar Agora
