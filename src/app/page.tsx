@@ -11,6 +11,7 @@ import {
   faShoppingCart, faBook, faMedal, faPhone, faEnvelope, faLocationDot,
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faYoutube, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import type { IconProp } from '@fortawesome/fontawesome-svg-core'
 const NAV_LINKS = [
   { href: '#', label: 'Início', active: true },
   { href: '#cursos', label: 'Cursos' },
@@ -517,10 +518,10 @@ export default function Home() {
               </p>
               <div className="flex gap-2.5">
                 {[
-                  { label: 'Facebook', icon: faFacebookF, href: '#' },
-                  { label: 'YouTube', icon: faYoutube, href: '#' },
-                  { label: 'Instagram', icon: faInstagram, href: '#' },
-                  { label: 'WhatsApp', icon: faWhatsapp, href: 'https://wa.me/934344265' },
+                  { label: 'Facebook', icon: faFacebookF as IconProp, href: '#' },
+                  { label: 'YouTube', icon: faYoutube as IconProp, href: '#' },
+                  { label: 'Instagram', icon: faInstagram as IconProp, href: '#' },
+                  { label: 'WhatsApp', icon: faWhatsapp as IconProp, href: 'https://wa.me/934344265' },
                 ].map(({ label, icon, href }) => (
                   <a
                     key={label}
