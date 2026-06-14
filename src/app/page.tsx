@@ -521,7 +521,7 @@ export default function Home() {
                   { label: 'Facebook', icon: faFacebookF as IconProp, href: '#' },
                   { label: 'YouTube', icon: faYoutube as IconProp, href: '#' },
                   { label: 'Instagram', icon: faInstagram as IconProp, href: '#' },
-                  { label: 'WhatsApp', icon: faWhatsapp as IconProp, href: 'https://wa.me/934344265' },
+                  { label: 'WhatsApp', icon: faWhatsapp as IconProp, href: 'https://wa.me/+244943660375' },
                 ].map(({ label, icon, href }) => (
                   <a
                     key={label}
