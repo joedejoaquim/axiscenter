@@ -10,6 +10,7 @@ import {
   faFileAlt, faChartLine, faMobileAlt, faUserPlus,
   faShoppingCart, faBook, faMedal, faPhone, faEnvelope, faLocationDot,
 } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF, faYoutube, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 const NAV_LINKS = [
   { href: '#', label: 'Início', active: true },
   { href: '#cursos', label: 'Cursos' },
@@ -173,7 +174,7 @@ export default function Home() {
               <Link href="/login" className="rounded-md border border-white px-4 py-2 text-xs font-semibold text-white bg-transparent hover:bg-white/10 transition-colors">
                 Entrar
               </Link>
-              <Link href="/register" className="rounded-md bg-[#FF7A00] px-4 py-2 text-xs font-bold text-white hover:bg-[#E56E00] transition-colors">
+              <Link href="/checkout" className="rounded-md bg-[#FF7A00] px-4 py-2 text-xs font-bold text-white hover:bg-[#E56E00] transition-colors">
                 Assine Agora
               </Link>
             </div>
@@ -484,7 +485,7 @@ export default function Home() {
             </div>
 
             <Link
-              href="/register"
+              href="/checkout"
               className="w-full md:w-auto bg-[#0D2B5E] rounded-xl px-6 py-4 flex items-center justify-between gap-6 hover:bg-[#0a2249] transition-colors shadow-lg min-w-[280px] md:min-w-[360px]"
             >
               <div>
@@ -516,18 +517,20 @@ export default function Home() {
               </p>
               <div className="flex gap-2.5">
                 {[
-                  { label: 'Facebook', abbr: 'f' },
-                  { label: 'YouTube', abbr: 'yt' },
-                  { label: 'Instagram', abbr: 'ig' },
-                  { label: 'WhatsApp', abbr: 'wa' },
-                ].map(({ label, abbr }) => (
+                  { label: 'Facebook', icon: faFacebookF, href: '#' },
+                  { label: 'YouTube', icon: faYoutube, href: '#' },
+                  { label: 'Instagram', icon: faInstagram, href: '#' },
+                  { label: 'WhatsApp', icon: faWhatsapp, href: 'https://wa.me/934344265' },
+                ].map(({ label, icon, href }) => (
                   <a
                     key={label}
-                    href="#"
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-[10px] font-bold text-white uppercase hover:bg-[#F97316] transition-colors"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-[#F97316] transition-colors"
                   >
-                    {abbr}
+                    <FontAwesomeIcon icon={icon} className="h-4 w-4" />
                   </a>
                 ))}
               </div>
@@ -586,7 +589,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-white/10 pt-6 text-center">
-            <p className="text-xs text-white/40">© 2024 Axis Center. Todos os direitos reservados.</p>
+            <p className="text-xs text-white/40">© 2026 Axis Center. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>
