@@ -37,6 +37,13 @@ const COURSES = [
     desc: 'Conteúdos essenciais de matemática para construir uma base sólida.',
     topics: ['Aritmética', 'Geometria', 'Números e Operações', 'Problemas do dia a dia'],
     illustration: 'basic',
+    modalTopics: [
+      'Números e Operações',
+      'Frações',
+      'Potência',
+      'Razões e Proporção',
+    ],
+    modalDesc: 'Domina os fundamentos da matemática com conteúdos claros e objectivos. Ideal para quem está no ensino de base ou quer reforçar a base antes de avançar.',
   },
   {
     tag: 'ENSINO MÉDIO',
@@ -45,6 +52,15 @@ const COURSES = [
     desc: 'Do básico ao avançado para você mandar bem no ensino médio.',
     topics: ['Álgebra', 'Funções', 'Trigonometria', 'Geometria Espacial'],
     illustration: 'medium',
+    modalTopics: [
+      'Álgebra',
+      'Funções',
+      'Inequações',
+      'Geometria Plana',
+      'Geometria Espacial',
+      'Trigonometria',
+    ],
+    modalDesc: 'Preparação completa para o ensino médio. Exercícios resolvidos, simulados e aulas didáticas para garantir a tua aprovação.',
   },
   {
     tag: 'SUPERIOR E CONCURSEIROS',
@@ -53,6 +69,15 @@ const COURSES = [
     desc: 'Matemática para universidades e concursos públicos.',
     topics: ['Cálculo', 'Matemática Financeira', 'Raciocínio Lógico', 'Questões de Concursos'],
     illustration: 'superior',
+    modalTopics: [
+      'Cálculo',
+      'Matemática Financeira',
+      'Raciocínio Lógico',
+      'Questões de Concursos',
+      'Estatística',
+      'Probabilidade',
+    ],
+    modalDesc: 'Conteúdo avançado para quem quer entrar na universidade ou passar em concursos públicos. Foco em questões práticas e raciocínio rápido.',
   },
 ]
 
@@ -134,6 +159,7 @@ function CourseIllustration({ type }: { type: string }) {
 
 export default function Home() {
   const [activeTestimonial] = useState(0)
+  const [modalCurso, setModalCurso] = useState<typeof COURSES[0] | null>(null)
 
   return (
     <main className="bg-white">
@@ -296,7 +322,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {COURSES.map(({ tag, tagColor, title, desc, topics, illustration }) => (
+            {COURSES.map(({ tag, tagColor, title, desc, topics, illustration, modalTopics, modalDesc }) => (
               <div
                 key={tag}
                 className="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col"
@@ -326,7 +352,10 @@ export default function Home() {
                 </div>
 
                 <div className="border-t border-slate-100 px-6 py-4 flex items-center justify-between">
-                  <button className="text-xs font-bold text-[#0D2B5E] uppercase tracking-wide group-hover:text-[#F97316] transition-colors">
+                  <button
+                    onClick={() => setModalCurso({ tag, tagColor, title, desc, topics, illustration, modalTopics, modalDesc })}
+                    className="text-xs font-bold text-[#0D2B5E] uppercase tracking-wide group-hover:text-[#F97316] transition-colors"
+                  >
                     Ver Curso
                   </button>
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#0D2B5E] text-[#0D2B5E] group-hover:bg-[#0D2B5E] group-hover:text-white transition-colors">
@@ -338,6 +367,68 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── MODAL CURSO ── */}
+      {modalCurso && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setModalCurso(null)}>
+          <div
+            className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden"
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className={`${modalCurso.tagColor} px-6 pt-6 pb-8`}>
+              <div className="flex items-start justify-between">
+                <span className="inline-block rounded-md bg-white/20 px-3 py-1 text-[10px] font-bold text-white uppercase tracking-widest">
+                  {modalCurso.tag}
+                </span>
+                <button
+                  onClick={() => setModalCurso(null)}
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors text-lg font-bold"
+                >
+                  ×
+                </button>
+              </div>
+              <h2 className="mt-4 text-xl font-black text-white leading-snug">{modalCurso.title}</h2>
+              <p className="mt-2 text-xs text-white/80 leading-relaxed">{modalCurso.modalDesc}</p>
+            </div>
+
+            {/* Conteúdo */}
+            <div className="px-6 py-5">
+              <p className="text-xs font-black text-[#0D2B5E] uppercase tracking-widest mb-4">Conteúdo Programático</p>
+              <ul className="space-y-3">
+                {modalCurso.modalTopics.map((t, i) => (
+                  <li key={t} className="flex items-center gap-3">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#F97316]/10 text-[10px] font-black text-[#F97316]">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="text-sm font-medium text-slate-700">{t}</span>
+                    <span className="ml-auto">
+                      <FontAwesomeIcon icon={faCheck} className="h-3 w-3 text-green-500" />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Footer */}
+            <div className="px-6 pb-6 flex gap-3">
+              <Link
+                href="/register"
+                className="flex-1 flex items-center justify-center gap-2 rounded-full bg-[#F97316] px-5 py-3 text-sm font-black text-white hover:bg-[#E56E00] transition-colors shadow-md"
+              >
+                Começar Agora
+                <FontAwesomeIcon icon={faArrowRight} className="h-3.5 w-3.5" />
+              </Link>
+              <button
+                onClick={() => setModalCurso(null)}
+                className="rounded-full border-2 border-slate-200 px-5 py-3 text-sm font-semibold text-slate-500 hover:border-slate-300 transition-colors"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── POR QUE ESTUDAR ── */}
       <section id="sobre" className="py-14 sm:py-16 bg-[#0D2B5E]">
