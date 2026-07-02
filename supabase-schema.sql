@@ -184,17 +184,45 @@ CREATE INDEX idx_mensagens_aula      ON mensagens(aula_id, created_at);
 -- ── TRIGGER: criar profile após registo ──────────────────────
 CREATE OR REPLACE FUNCTION handle_new_user()
 RETURNS TRIGGER AS $$
+DECLARE
+  v_role    user_role   := 'aluno';
+  v_status  user_status := 'ativo';
+  v_name    VARCHAR(100);
 BEGIN
-  INSERT INTO profiles (id, name, role, status)
+  -- Ler role dos metadados, com fallback seguro para 'aluno'
+  BEGIN
+    v_role := COALESCE(
+      (NEW.raw_user_meta_data->>'role')::user_role,
+      'aluno'::user_role
+    );
+  EXCEPTION WHEN invalid_text_representation THEN
+    v_role := 'aluno'::user_role;
+  END;
+
+  -- Status: alunos ficam activos, professores ficam pendentes
+  IF v_role = 'aluno' THEN
+    v_status := 'ativo';
+  ELSE
+    v_status := 'pendente';
+  END IF;
+
+  -- Nome: metadados ou e-mail ou fallback
+  v_name := COALESCE(
+    NULLIF(TRIM(NEW.raw_user_meta_data->>'name'), ''),
+    SPLIT_PART(NEW.email, '@', 1),
+    'Utilizador'
+  );
+
+  INSERT INTO profiles (id, name, role, plan, status)
   VALUES (
     NEW.id,
-    COALESCE(NEW.raw_user_meta_data->>'name', 'Utilizador'),
-    (NEW.raw_user_meta_data->>'role')::user_role,
-    CASE
-      WHEN (NEW.raw_user_meta_data->>'role') = 'aluno' THEN 'ativo'::user_status
-      ELSE 'pendente'::user_status
-    END
-  );
+    v_name,
+    v_role,
+    'gratuito',
+    v_status
+  )
+  ON CONFLICT (id) DO NOTHING;
+
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;

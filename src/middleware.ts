@@ -35,7 +35,8 @@ export async function middleware(request: NextRequest) {
     if (user) {
       const { data: profile } = await supabase
         .from('profiles').select('role').eq('id', user.id).single()
-      return NextResponse.redirect(new URL(`/${profile?.role ?? ''}`, request.url))
+      const dest = profile?.role ? `/${profile.role}` : '/aluno'
+      return NextResponse.redirect(new URL(dest, request.url))
     }
     return response
   }

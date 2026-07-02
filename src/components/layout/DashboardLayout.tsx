@@ -14,15 +14,15 @@ export function DashboardLayout({ profile, children }: DashboardLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F4F7FC]">
+    <div className="flex h-screen overflow-hidden bg-[#F0F2F8]">
       <Sidebar
         role={profile.role}
         open={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
       />
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden min-w-0">
         <Navbar profile={profile} onMenuClick={() => setSidebarOpen(true)} />
-        <main className="flex-1 overflow-y-auto p-4 lg:p-8">
+        <main className="flex-1 overflow-y-auto">
           {children}
         </main>
       </div>
